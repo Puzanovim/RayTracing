@@ -65,6 +65,21 @@ namespace Tracer
                     material = spheres[i].material;
                 }
             }
+
+            // float checkerboard_dist = float.MaxValue;
+            // if (Math.Abs(dir.y) > 1e-3)
+            // {
+            //    float d = -(orig.y + 4) / dir.y; // the checkerboard plane has equation y = -4
+            //    Point pt = orig + dir * d;
+            //if (d > 0 && Math.Abs(pt.x) < 10 && pt.z < -10 && pt.z > -30 && d < spheres_dist)
+            //{
+            //checkerboard_dist = d;
+            //hit = pt;
+            //N = new Point(0, 1, 0);
+            //material.diffuse_color = (((int)(0.5 * hit.x + 1000) + (int)(0.5 * hit.z)) & 1) != 0 ? new Point(1f, 1f, 1f) : new Point(1f, 0.7f, 0.3f);
+            //material.diffuse_color = material.diffuse_color * 0.3f;
+            //}
+            //}
             return spheres_dist < 1000;
         }
 
