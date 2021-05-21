@@ -26,6 +26,7 @@ namespace Tracer
 
         public Point normalize()
         {
+            // функция нормирования вектора
             float norm = this.norm();
             x = x / norm;
             y = y / norm;
@@ -33,7 +34,7 @@ namespace Tracer
             return this;
         }
 
-
+        // далее идут переопределения операторов работы с векторами.
         public static Point operator +(Point point1, Point point2)
         {
             return new Point(
@@ -69,6 +70,20 @@ namespace Tracer
             float y = point1.y / point2.y;
             float z = point1.z / point2.z;
             return new Point(x: x, y: y, z: z);
+        }
+    }
+
+    public class Point4: Point
+    {
+        // класс точки с 4 координатами
+        public float t;
+
+        public Point4(float x = 0, float y = 0, float z = 0, float t = 0)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.t = t;
         }
     }
 }

@@ -8,24 +8,24 @@ namespace Tracer
 {
     public class Material
     {
-        public Point diffuse_color;
-        public Point albedo;
-        public float specular_exponent;
-        // public float refractive_index;
+        public Point diffuse_color;  // рассеянный цвет, по сути основной цвет материала
+        public Point4 albedo;  // отражательная способность
+        public float specular_exponent;  // показатель отражение, говорит о силе отражения. Чем больше, тем более блестящая поверхность
+        public float refractive_index;  // показатель преломления
         public Material()
         {
-            this.albedo = new Point(1, 0, 0);
+            this.albedo = new Point4(1, 0, 0, 0);
             this.diffuse_color = new Point();
             this.specular_exponent = 0;
-            // this.refractive_index = 1;
+            this.refractive_index = 1;
         }
 
-        public Material(Point albedo, Point color, float spec)
+        public Material(float r_index, Point4 albedo, Point color, float spec)
         {
             this.albedo = albedo;
             this.diffuse_color = color;
             this.specular_exponent = spec;
-            // this.refractive_index = r_index;
+            this.refractive_index = r_index;
         }        
     }
 }

@@ -8,8 +8,8 @@ namespace Tracer
 {
     public class Light
     {
-        public Point position;
-        public float intensity;
+        public Point position; // позиция источника
+        public float intensity; // интенсивность света
         public Light(Point position, float intensity)
         {
             this.position = position;

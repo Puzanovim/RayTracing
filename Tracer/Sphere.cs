@@ -8,9 +8,9 @@ namespace Tracer
 {
     public class Sphere
     {
-        public Point center;
-        public float radius;
-        public Material material;
+        public Point center;  // координата центра
+        public float radius;  // радиус сферы
+        public Material material;  // материал сферы
 
         public Sphere(Point center, float radius, Material material)
         {
@@ -20,8 +20,9 @@ namespace Tracer
         }
 
 
-        public bool ray_intersect(ref Point orig, ref Point dir, ref float t0)
+        public bool Ray_intersect(ref Point orig, ref Point dir, ref float t0)
         {
+            // пересечение лучей
             Point L = this.center - orig;
             float tca = L * dir;
             float d2 = L * L - tca * tca;
